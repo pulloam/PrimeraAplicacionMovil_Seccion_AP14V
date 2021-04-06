@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PrimeraAplicacion</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="titulos">Título</string>
+    <string name="hint_correo">Ingrese correo</string>
+    <string name="salir">Salir</string>
 </resources>
