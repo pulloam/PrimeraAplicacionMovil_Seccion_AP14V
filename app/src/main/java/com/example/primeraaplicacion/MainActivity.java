@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     private TextView tvTit;
     private EditText etEmail;
+
+    //Mi propio comentario
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickBoton(View v){
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
         String correo = etEmail.getText().toString();
+
+        boolean correoOK = pattern.matcher(correo).matches();
 
         etEmail.setError(null);
 
-        if(!correo.isEmpty()){
+        if(correoOK){
             Log.d("TAG_", "Click botón");
             Toast.makeText(this, "Enviando correo a " + correo , Toast.LENGTH_SHORT).show();
             tvTit.setTextColor(Color.BLACK);
@@ -39,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
             etEmail.setError("Debe ingresar correo");
             tvTit.setTextColor(Color.RED);
         }
-        
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();
+
+
 
     }
 
