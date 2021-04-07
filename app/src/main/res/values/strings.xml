@@ -4,4 +4,6 @@
     <string name="titulos">Título</string>
     <string name="hint_correo">Ingrese correo</string>
     <string name="salir">Salir</string>
+    <string name="error_correo">Debe ingresar correo</string>
+    <string name="enviar">Enviando correo a</string>
 </resources>

@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvTit;
     private EditText etEmail;
 
-    //Mi propio comentario
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         if(correoOK){
             Log.d("TAG_", "Click botón");
-            Toast.makeText(this, "Enviando correo a " + correo , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.enviar) + " " + correo , Toast.LENGTH_LONG).show();
             tvTit.setTextColor(Color.BLACK);
         }else{
-            etEmail.setError("Debe ingresar correo");
+            etEmail.setError(getString(R.string.error_correo));
             tvTit.setTextColor(Color.RED);
         }
-
-
-
     }
 
     public void clickSalir(View v){
