@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             etEmail.setError("Debe ingresar correo");
             tvTit.setTextColor(Color.RED);
         }
+        
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
 
     }
 
