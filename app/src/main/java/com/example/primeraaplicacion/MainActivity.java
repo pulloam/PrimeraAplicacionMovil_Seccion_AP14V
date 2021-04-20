@@ -2,6 +2,7 @@ package com.example.primeraaplicacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("TAG_", "Click botón");
                 Toast.makeText(this, getString(R.string.enviar) + " " + correo , Toast.LENGTH_LONG).show();
                 tvTit.setTextColor(Color.BLACK);
+
+                Intent i = new Intent(this, SegundaActivity.class);
+                i.putExtra("keyCorreo",correo);
+                i.putExtra("keyEdad", 43);
+                startActivity(i);
             }else{
                 etEmail.setError(getString(R.string.error_correo));
                 tvTit.setTextColor(Color.RED);
